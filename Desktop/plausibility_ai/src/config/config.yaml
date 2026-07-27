@@ -1,0 +1,46 @@
+auth:
+  mode: "devpod"
+  broker_url: "https://auth.devpod.xyz"
+  broker_version: "v2"
+  auth_refresh: true
+  verify_ssl: true
+
+llm:
+  endpoint: "http://localhost:8000/v1/chat/completions"
+  model_name: "Qwen/Qwen3.6-27B"
+  context_window: 8192
+  max_output_tokens: 4096
+  temperature: 0.1
+  timeout_seconds: 300
+  max_retries: 3
+  verify_ssl: false
+
+retrieval:
+  strategy: "rag"
+  top_k_docs: 5
+  top_k_code: 5
+  similarity_threshold: 0.3
+
+embedding:
+  use_api: true
+  api_model_name: "Qwen/Qwem3-Embedding-8B"
+  max_tokens: 6000
+  chars_per_token: 4
+
+vector_store:
+  type: "chromadb"
+  persist_path: "./data/chromadb"
+
+indexing:
+  chunk_size: 512
+  chunk_overlap: 64
+
+paths:
+  pdf_directory: "./data/model-docs"
+  code_directory: "./data/codebase"
+  code_docs_directory: "./data/code_docs"
+
+model_mapping:
+  "ALM": "ALM"
+  "AIRB": "AIRB"
+  "code": "default"

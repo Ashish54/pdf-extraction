@@ -1,0 +1,22 @@
+plausibility_model_mapping:
+  - Control name: PlausibilityScenarioUniverse
+    Country names: "Not specific country"
+    Model name: "None"
+    Model id: "None"
+  
+  - Control name: OutlierOutputHPI
+    Country names: JP
+    Model name: "Shock Generator - Government Bonds & OIS"
+    Model id: "100235"
+
+  - Control name: LTECBaseline
+    Country names: "Not specific country"
+    Model name: "Shock Generator - Long Term Equilibrium Convergence"
+    Model id: "103304" 
+  
+  - Control name: BreakevenCurve
+    Country names: "US, EZ"
+    Model name: "Multiple"
+    Model id: "19894" 
+  
+    

@@ -1,0 +1,31 @@
+[project]
+name = "plausibility-ai"
+version = "0.1.0"
+description = "Automated triage and validation commentary for financial risk model plausibility test breaches"
+authors = [
+    { name = "DeepMind Agent", email = "agent@google.com" }
+]
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "openpyxl>=3.1.0",
+    "pymupdf4llm>=0.0.5",
+    "pymupdf>=1.24.0",
+    "chromadb-client>=1.5.0",
+    "httpx>=0.24.0",
+    "tenacity>=8.2.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+plausibility-ai = "src.cli:cli"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
