@@ -1,0 +1,7 @@
+title: "Sample Big Report \u2014 Extract"
+sections:
+- Introduction
+- 'Chapter 2: Topic 2'
+- Exercises
+- 'Appendix A: Raw Data'
+drop_printed_toc: true

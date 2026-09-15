@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf-extractor"
+version = "0.1.0"
+description = "Keep only configured sections of large PDFs, located via embedded bookmarks, copied losslessly."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pypdf>=4.0",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+pdf-extract = "pdf_extractor.cli:main"
+
+[tool.setuptools]
+packages = ["pdf_extractor"]
