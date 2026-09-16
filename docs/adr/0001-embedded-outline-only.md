@@ -1,0 +1,3 @@
+# Embedded outline is the only section source
+
+The extractor locates Section Ranges exclusively through the PDF's embedded outline (bookmarks); a PDF without an outline is rejected with a clear error rather than parsed heuristically. Alternatives considered: parsing the printed TOC pages (fragile regex heuristics over arbitrary layouts) and manual page ranges in config (doesn't scale across a corpus). We accepted the hard dependency on bookmarks because the target documents are expected to be well-structured reports/books, and because wrong page ranges are worse than a loud refusal. The outline reader sits behind a `SectionSource` protocol so a printed-TOC or manual-range source can be added later without touching matching, selection, or writing.

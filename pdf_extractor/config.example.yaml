@@ -1,0 +1,38 @@
+# config.example.yaml — copy and edit for your document.
+#
+# Every entry in `sections` is matched (case/whitespace-insensitive) against
+# the PDF's embedded bookmarks and kept WITH all its subsections. One entry
+# keeps every section with that title (match-all). Everything else is dropped,
+# except front matter and back matter (see flags below).
+
+# Directories: run the tool with just a file name — it is looked up inside
+# input_dir, and the result is written to <output_dir>/<name>_reduced.pdf.
+input_dir: "./pdfs/in"
+output_dir: "./pdfs/out"
+
+# Optional output /Title metadata override. By default the title is taken
+# from the input file name (e.g. annual_report.pdf -> "annual_report").
+# title: "Annual Technical Report 2024"
+
+# What to do when a config entry matches no bookmark: warn | fail
+on_missing: warn
+
+# Keep pages before the first bookmark (cover, title page, printed TOC, preface).
+keep_front_matter: true
+
+# Keep pages from the last bookmark to EOF even when that final section is
+# dropped (the back cover is page-granularly inseparable from it). A warning
+# is printed because those pages include the dropped section's content.
+keep_back_matter: true
+
+# Drop pages of bookmarked sections titled "Contents" / "Table of Contents"
+# (the printed TOC becomes stale after extraction: it lists dropped sections
+# with original page numbers).
+drop_printed_toc: false
+
+# Exact bookmark titles to keep, any nesting level; order irrelevant.
+sections:
+  - "Introduction"
+  - "Chapter 2: Architecture"
+  - "Chapter 5: Benchmarks"
+  - "Appendix A: Raw Data"

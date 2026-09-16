@@ -1,0 +1,8 @@
+input_dir: sample
+output_dir: sample/out
+sections:
+- Introduction
+- 'Chapter 2: Topic 2'
+- Exercises
+- 'Appendix A: Raw Data'
+drop_printed_toc: true
